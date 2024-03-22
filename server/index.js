@@ -78,6 +78,7 @@ mongoose.connect(process.env.MONGO_URL || fallbackMongoURI)
   .catch((error) => console.error("MongoDB connection error:", error));
 
 
+export default app;
 
 
 
