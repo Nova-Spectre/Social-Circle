@@ -67,16 +67,17 @@ app.use("/posts",postRoutes)
 
 
 /*MONGOOSE SETUP */
-
 const PORT=process.env.PORT || 6001;
+console.log("MongoDB URI:", process.env.MONGO_URL);
 mongoose.connect(process.env.MONGO_URL)
-.then(()=>{
-    app.listen(PORT,()=>console.log(`Server Started`));
-    // User.insertMany(users);
-    // Post.insertMany(posts);
+  .then(() => {
+    console.log("Connected to MongoDB");
+    app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
+  })
+  .catch((error) => console.error("MongoDB connection error:", error));
 
-})
-.catch((error)=>console.log(`${error} did not connect`));
+
+
 
 
 
