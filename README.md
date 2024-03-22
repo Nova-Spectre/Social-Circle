@@ -2,6 +2,8 @@
 
 SocialCircle is a full-stack social media application built with the MERN (MongoDB, Express, React, Node.js) stack. It offers a seamless social interaction experience similar to Instagram, with features including authentication, likes, comments, dark mode, and more.
 
+https://social-circle-frontend-snowy.vercel.app/
+
 ## Features
 
 - **Authentication**: Users can sign up, log in, and log out securely.
