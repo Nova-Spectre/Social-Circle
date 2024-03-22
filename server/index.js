@@ -33,7 +33,12 @@ app.use(helmet.crossOriginResourcePolicy({policy:"cross-origin"}));
 app.use(morgan("common"));
 app.use(bodyParser.json({limit:"30mb",extended:true}));
 app.use(bodyParser.urlencoded({limit:"30mb",extended:true}));
-app.use(cors());
+app.use(cors({
+    origin:["https://social-circle-frontend-snowy.vercel.app"],
+    methods:["POST","GET","PATCH"],
+    credential:true
+}
+));
 app.use("/assets",express.static(path.join(__dirname,'public/assets')));
 
 /* File Storage */
@@ -66,7 +71,7 @@ app.use("/posts",postRoutes)
 const PORT=process.env.PORT || 6001;
 mongoose.connect(process.env.MONGO_URL)
 .then(()=>{
-    app.listen(PORT,()=>console.log(`Server PORT: ${PORT}`));
+    app.listen(PORT,()=>console.log(`Server Started`));
     // User.insertMany(users);
     // Post.insertMany(posts);
 

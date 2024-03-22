@@ -24,7 +24,7 @@ const UserWidget = ({ userId, picturepath }) => {
   const main = palette.neutral.main;
 
   const getUser = async () => {
-    const response = await fetch(`http://localhost:3001/users/${userId}`, {
+    const response = await fetch(`https://social-circle-api.vercel.app/users/${userId}`, {
       method: "GET",
       headers: { Authorization: `Bearer ${token}` },
     });

@@ -27,7 +27,7 @@ const Friend = ({ friendId, name, subtitle, userpicturepath }) => {
   const patchFriend = async () => {
     console.log("ID:", _id);
     console.log("FriendID:", friendId);
-    const response = await fetch(`http://localhost:3001/users/${_id}/${friendId}`, {
+    const response = await fetch(`https://social-circle-api.vercel.app/users/${_id}/${friendId}`, {
       method: "PATCH",
       headers: {
         Authorization: `Bearer ${token}`,
