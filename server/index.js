@@ -68,8 +68,9 @@ app.use("/posts",postRoutes)
 
 /*MONGOOSE SETUP */
 const PORT=process.env.PORT || 6001;
+const fallbackMongoURI = 'mongodb+srv://dummyuser:dummyuser@cluster0.siyqlgi.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
 console.log("MongoDB URI:", process.env.MONGO_URL);
-mongoose.connect(process.env.MONGO_URL)
+mongoose.connect(process.env.MONGO_URL || fallbackMongoURI)
   .then(() => {
     console.log("Connected to MongoDB");
     app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
