@@ -57,11 +57,12 @@ const Form = () => {
   const isRegister = pageType === "register";
 
   const register = async (values, onSubmitProps) => {
+    values.email = values.email.toLowerCase();
     // this allows us to send form info with image
     const formData = new FormData();
     for (let value in values) {
       formData.append(value, values[value]);
-      console.log(value,values[value]);
+      
 
     }
     formData.append("picturepath", values.picture.name);
