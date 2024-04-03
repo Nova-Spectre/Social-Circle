@@ -29,30 +29,16 @@ app.use(express.json());
 app.use(helmet());
 app.use(helmet.crossOriginResourcePolicy({ policy: "cross-origin" }));
 app.use(morgan("common"));
-<<<<<<< HEAD
 app.use(bodyParser.json({ limit: "30mb", extended: true }));
 app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
-const corsConfig={
-  origin:["https://social-circle-frontend-snowy.vercel.app"],
-  methods:["POST","GET","PATCH","PUT"],
-  credential:true,
-}
-app.options("",cors(corsConfig));
-app.use(cors(corsConfig));
-
+// app.use(cors({
+//     origin:["https://social-circle-frontend-snowy.vercel.app"],
+//     methods:["POST","GET","PATCH"],
+//     credential:true
+// }
+// ));
+app.use(cors());
 app.use("/assets", express.static(path.join(__dirname, "public/assets")));
-=======
-app.use(bodyParser.json({limit:"30mb",extended:true}));
-app.use(bodyParser.urlencoded({limit:"30mb",extended:true}));
-const corsConfig={
-    origin:["https://social-circle-frontend-snowy.vercel.app"],
-    methods:["POST","GET","PATCH","PUT"],
-    credential:true,
-}
-app.options("",cors(corsConfig));
-app.use(cors(corsConfig));
-app.use("/assets",express.static(path.join(__dirname,'public/assets')));
->>>>>>> 9743a77b8410763845396a8d0f898c4ba13bedf3
 
 /* File Storage */
 const Storage = multer.memoryStorage(); // Use memory storage for handling files in memory
@@ -170,19 +156,11 @@ app.use("/users", userRoutes);
 app.use("/posts", postRoutes);
 
 /*MONGOOSE SETUP */
-const PORT=process.env.PORT || 6001;
-const fallbackMongoURI = 'mongodb+srv://dummyuser:dummyuser@cluster0.siyqlgi.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
-console.log("MongoDB URI:", process.env.MONGO_URL);
-mongoose.connect(process.env.MONGO_URL || fallbackMongoURI)
+
+const PORT = process.env.PORT || 6001;
+mongoose
+  .connect(process.env.MONGO_URL)
   .then(() => {
-    console.log("Connected to MongoDB");
-    app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
+    app.listen(PORT, () => console.log(`Server Started`));
   })
-  .catch((error) => console.error("MongoDB connection error:", error));
-
-
-export default app;
-
-
-
-
+  .catch((error) => console.log(`${error} did not connect`));

@@ -15,7 +15,10 @@
     "@mui/icons-material": "^5.15.13",
     "@mui/material": "^5.15.13",
     "@reduxjs/toolkit": "^2.2.1",
+<<<<<<< HEAD
     "firebase": "^10.9.0",
+=======
+>>>>>>> 9743a77b8410763845396a8d0f898c4ba13bedf3
     "formik": "^2.4.5",
     "https": "^1.0.0",
     "install": "^0.13.0",
@@ -24,9 +27,13 @@
     "react-dropzone": "^14.2.3",
     "react-redux": "^9.1.0",
     "react-router-dom": "^6.22.3",
+<<<<<<< HEAD
     "react-top-loading-bar": "^2.3.1",
     "redux-persist": "^6.0.0",
     "uuid": "^9.0.1",
+=======
+    "redux-persist": "^6.0.0",
+>>>>>>> 9743a77b8410763845396a8d0f898c4ba13bedf3
     "yup": "^1.4.0"
   },
   "devDependencies": {
