@@ -65,7 +65,7 @@ const PostWidget = ({
 
   const addComment = async () => {
     const response = await fetch(
-      `http://localhost:3001/posts/${postId}/comments`,
+      `https://social-circle-e0ba.onrender.com/posts/${postId}/comments`,
       {
         method: "POST",
         headers: {
