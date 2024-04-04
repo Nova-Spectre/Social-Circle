@@ -3,11 +3,8 @@ import {
     getFeedPosts,
     getUserPosts,
     likePost,
-<<<<<<< HEAD
     addComment,
     updateComment
-=======
->>>>>>> 9743a77b8410763845396a8d0f898c4ba13bedf3
 
 } from "../controller/posts.js";
 
@@ -25,12 +22,9 @@ router.get("/:userId/posts",verifyToken,getUserPosts);
 //Update
 
 router.patch("/:id/like",verifyToken,likePost);
-<<<<<<< HEAD
 router.post("/:id/comments", verifyToken, addComment);
 router.patch("/:id/comments/:commentId", verifyToken, updateComment);
 
-=======
->>>>>>> 9743a77b8410763845396a8d0f898c4ba13bedf3
 
 
 
