@@ -51,7 +51,7 @@ const PostWidget = ({
   const primary = palette.primary.main;
 
   const patchLike = async () => {
-    const response = await fetch(`https://social-circle-api.vercel.app/posts/${postId}/like`, {
+    const response = await fetch(`https://social-circle-e0ba.onrender.com/posts/${postId}/like`, {
       method: "PATCH",
       headers: {
         Authorization: `Bearer ${token}`,
