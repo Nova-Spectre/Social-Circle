@@ -47,7 +47,7 @@ const upload = multer({ storage: Storage });
 
 
 //Register file upload Function
-export const uploadPicture = async (req, res, next) => {
+const uploadPicture = async (req, res, next) => {
   try {
       if (!req.file) {
           return res.status(400).json({ error: "No files were uploaded." });
@@ -84,7 +84,7 @@ export const uploadPicture = async (req, res, next) => {
 };
 
 //Post file Function
-export const uploadPostPicture = async (req, res, next) => {
+const uploadPostPicture = async (req, res, next) => {
   try {
     if (!req.file) {
       // If no file is uploaded, simply proceed to the next middleware
