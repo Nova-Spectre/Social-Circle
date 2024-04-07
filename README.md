@@ -19,9 +19,16 @@ https://social-circle-frontend-snowy.vercel.app/
 - **Database**: MongoDB
 - **Authentication**: JSON Web Tokens (JWT)
 - **Styling**: CSS
-- **Deployment**: Heroku for backend, Netlify for frontend
+- **Deployment**: Render for backend, Vercel for frontend
+
+
+
+
+![Dashboard Dark](https://github.com/Nova-Spectre/Social-Circle/assets/51260891/3e06e0a1-997d-4fe1-86e5-cd54cb7fee62)
+![Dashboard Light](https://github.com/Nova-Spectre/Social-Circle/assets/51260891/3ad9e4b1-0f96-4258-be08-2c9268776b5c)
 
 ## Setup
+
 
 1. **Clone the repository**:
 
