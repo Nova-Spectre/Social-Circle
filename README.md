@@ -33,13 +33,13 @@ https://social-circle-frontend-snowy.vercel.app/
 1. **Clone the repository**:
 
    ```bash
-   git clone https://github.com/your-username/socialcircle.git
+   git clone https://github.com/Nova-Spectre/socialcircle.git
 
 
 2. Install dependencies
 
         ```bash
-        cd socialcircle
+        cd socialcircle/server
         npm install
   
   3. Set up environment variables:
@@ -50,16 +50,16 @@ https://social-circle-frontend-snowy.vercel.app/
       MONGODB_URI=your_mongodb_uri
       JWT_SECRET=your_jwt_secret
   
-  4. Run the application:
+  4. Run the server:
         
     ```bash
-        npm start
+        node index.js
   
   5. Start the frontend:
-      Open another terminal window/tab and navigate to the client directory:
+      Open another terminal window/tab and navigate to the frontend directory:
   
     ```bash
-        cd client
+        cd frontend
 
   
    
@@ -71,14 +71,15 @@ https://social-circle-frontend-snowy.vercel.app/
  Run the frontend:
        
        ```bash
-       npm start
+       npm run dev
 
 
 
 
 ## Access the application
 
-Open your browser and visit [http://localhost:3000](http://localhost:3000) to access the SocialCircle application.
+Open your browser and visit [http://localhost:5173](http://localhost:5173) to access the SocialCircle application.
+Server will start on [http://localhost:3001](http://localhost:3001)
 
 ## Contributing
 
