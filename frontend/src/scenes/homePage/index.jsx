@@ -5,6 +5,7 @@ import UserWidget from "../widgets/UserWidget";
 import MyPostWidget from "../widgets/MyPostWidget";
 import PostsWidget from "../widgets/PostsWidget";
 import AdvertWidget from "../widgets/AdvertWidget";
+import FlexBetween from "../../components/FlexBetween";
 import WidgetWrapper from "../../components/WidgetWrapper";
 import FriendListWidget from "../widgets/FriendListWidget";
 
@@ -23,10 +24,14 @@ const HomePage = () => {
         gap="0.5rem"
         justifyContent="space-between"
       >
+        
         <Box flexBasis={isNonMobileScreens ? "26%" : undefined}>
-        <UserWidget userId={_id} picturepath={picturepath} style={{ marginBottom: '20px' }}/>
-
-        {isNonMobileScreens && (<WidgetWrapper m="2rem 0"><AdvertWidget/></WidgetWrapper>)}
+        {isNonMobileScreens && (
+            <>
+              <UserWidget userId={_id} picturepath={picturepath} style={{ marginBottom: '20px' }} />
+              <WidgetWrapper m="2rem 0"><AdvertWidget/></WidgetWrapper>
+            </>
+          )}
           
         </Box>
         <Box flexBasis={isNonMobileScreens ? "42%" : undefined}
@@ -42,6 +47,11 @@ const HomePage = () => {
             </Box>
         )}
       </Box>
+      {!isNonMobileScreens && (
+        <Box padding="20px">
+          <UserWidget userId={_id} picturepath={picturepath} style={{ marginTop: '20px' }} />
+        </Box>
+      )}
     </Box>
   );
 };
