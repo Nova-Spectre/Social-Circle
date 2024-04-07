@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { preLoaderAnim } from "./PreLoaderAnim";
 import { useTheme } from "@emotion/react";
 import "./preloader.css";
+import output from "../assets/output.png";
 
 const PreLoader = () => {
   const theme = useTheme();
@@ -23,7 +24,7 @@ const PreLoader = () => {
       className="preloader"
       style={{ background: backgroundColor, color: textColor }}
     >
-      <img src="/src/assets/output.png" alt="Logo" className="logo" />
+      <img src={output} alt="Logo" className="logo" />
       <h1 className="app-name">SocialCircle</h1>
       <div className="texts-container">
         <p className="description">A Social App for Connected Souls.</p>
