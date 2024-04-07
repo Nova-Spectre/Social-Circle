@@ -12,11 +12,7 @@ import { register } from "./controller/auth.js";
 import authRoutes from "./routes/auth.js";
 import userRoutes from "./routes/users.js";
 import postRoutes from "./routes/posts.js";
-import verifyToken from "./middleware/auth.js";
-import { createPost } from "./controller/posts.js";
-import User from "./models/User.js";
-import Post from "./models/Post.js";
-import { users, posts } from "./data/index.js";
+import { createPost } from "./controller/posts.js";import User from "./models/User.js";
 import { firebaseStorage } from "./firebaseAdmin.js";
 
 /* Configurations*/
@@ -31,13 +27,13 @@ app.use(helmet.crossOriginResourcePolicy({ policy: "cross-origin" }));
 app.use(morgan("common"));
 app.use(bodyParser.json({ limit: "30mb", extended: true }));
 app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
-// app.use(cors({
-//     origin:["https://social-circle-frontend-snowy.vercel.app"],
-//     methods:["POST","GET","PATCH"],
-//     credential:true
-// }
-// ));
-app.use(cors());
+app.use(cors({
+    origin:["https://social-circle-frontend-snowy.vercel.app"],
+    methods:["POST","GET","PATCH"],
+    credential:true
+}
+));
+
 app.use("/assets", express.static(path.join(__dirname, "public/assets")));
 
 /* File Storage */
@@ -47,7 +43,7 @@ const upload = multer({ storage: Storage });
 
 
 //Register file upload Function
-export const uploadPicture = async (req, res, next) => {
+export const  uploadPicture = async (req, res, next) => {
   try {
       if (!req.file) {
           return res.status(400).json({ error: "No files were uploaded." });
@@ -84,7 +80,7 @@ export const uploadPicture = async (req, res, next) => {
 };
 
 //Post file Function
-export const uploadPostPicture = async (req, res, next) => {
+ export const uploadPostPicture = async (req, res, next) => {
   try {
     if (!req.file) {
       // If no file is uploaded, simply proceed to the next middleware

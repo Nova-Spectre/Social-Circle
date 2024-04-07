@@ -51,7 +51,7 @@ export const createPost =async(req,res,picturepath)=>{
 export const getFeedPosts = async(req,res)=>{
     try{
 
-        const post=await Post.find().sort({ createdAt: -1 });
+        const post=await Post.find();
         res.status(200).json(post);
 
     }catch(err){

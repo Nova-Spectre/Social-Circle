@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import {useDispatch,useSelector } from "react-redux";
-import { setPosts,setComment } from "../../state";
+import { setPosts } from "../../state";
 import PostWidget from "./PostWidget";
 
 const PostsWidget =({userId,isProfile=false})=>{
@@ -9,7 +9,7 @@ const PostsWidget =({userId,isProfile=false})=>{
     const token =useSelector((state)=>state.token);
 
     const getPosts=async()=>{
-        const response = await fetch("https://social-circle-api.vercel.app/posts", {
+        const response = await fetch("https://social-circle-e0ba.onrender.com/posts", {
             method: "GET",
             headers: { Authorization: `Bearer ${token}` },
             
@@ -43,7 +43,10 @@ const PostsWidget =({userId,isProfile=false})=>{
 
 return (
     <>
-    {Array.isArray(posts) && posts.map(
+    {Array.isArray(posts) && posts
+    .slice()
+    .reverse()
+    .map(
         ({
             _id,
             userId,

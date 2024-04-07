@@ -97,7 +97,7 @@ const Form = () => {
     
   
       const savedUserResponse = await fetch(
-        "https://social-circle-api.vercel.app/auth/register",
+        "https://social-circle-e0ba.onrender.com/auth/register",
         {
           method: "POST",
           body: formData,
@@ -137,7 +137,7 @@ const Form = () => {
 
   const login = async (values, onSubmitProps) => {
     values.email = values.email.toLowerCase();
-    const loggedInResponse = await fetch("https://social-circle-api.vercel.app/auth/login", {
+    const loggedInResponse = await fetch("https://social-circle-e0ba.onrender.com/auth/login", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(values),

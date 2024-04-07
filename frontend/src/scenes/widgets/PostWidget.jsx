@@ -9,7 +9,6 @@ import {
   TextField,
   Box,
   Divider,
-  Icon,
   IconButton,
   Typography,
   useTheme,
@@ -51,7 +50,7 @@ const PostWidget = ({
   const primary = palette.primary.main;
 
   const patchLike = async () => {
-    const response = await fetch(`https://social-circle-api.vercel.app/posts/${postId}/like`, {
+    const response = await fetch(`https://social-circle-e0ba.onrender.com/posts/${postId}/like`, {
       method: "PATCH",
       headers: {
         Authorization: `Bearer ${token}`,
@@ -65,7 +64,7 @@ const PostWidget = ({
 
   const addComment = async () => {
     const response = await fetch(
-      `http://localhost:3001/posts/${postId}/comments`,
+      `https://social-circle-e0ba.onrender.com/posts/${postId}/comments`,
       {
         method: "POST",
         headers: {

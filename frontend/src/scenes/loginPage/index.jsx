@@ -32,7 +32,7 @@ const LoginPage = () => {
         backgroundColor={theme.palette.background.alt}
       >
         <Typography fontWeight="500" variant="h5" sx={{ mb: "1.5rem" }}>
-          Welcome to SocialCircle, the Social Media for Sociopaths!
+        Welcome to SocialCircle, Connect, Share, and Explore!
         </Typography>
         <Form />
       </Box>

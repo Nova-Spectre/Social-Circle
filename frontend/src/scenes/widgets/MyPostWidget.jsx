@@ -78,7 +78,7 @@ const MyPostWidget = ({ picturepath }) => {
     }
     console.log("Sending POST request...");
 
-    const response = await fetch("https://social-circle-api.vercel.app/posts", {
+    const response = await fetch("https://social-circle-e0ba.onrender.com/posts", {
       method: "POST",
       headers: { Authorization: `Bearer ${token}` },
       body: formData,
