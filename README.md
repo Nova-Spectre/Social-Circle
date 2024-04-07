@@ -18,6 +18,7 @@ https://social-circle-frontend-snowy.vercel.app/
 - **Backend**: Node.js, Express.js
 - **Database**: MongoDB
 - **Authentication**: JSON Web Tokens (JWT)
+- **Storage** : Firebase
 - **Styling**: CSS
 - **Deployment**: Render for backend, Vercel for frontend
 
